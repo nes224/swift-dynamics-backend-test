@@ -71,6 +71,7 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend'
     ],
+    'EXCEPTION_HANDLER': 'apis.exceptions.custom_exception_handler',
 }
 
 ROOT_URLCONF = 'exam_app.urls'

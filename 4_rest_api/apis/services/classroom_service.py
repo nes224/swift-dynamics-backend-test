@@ -1,4 +1,6 @@
 from django.db.models import Q
+from django.db import IntegrityError
+from rest_framework import serializers
 from apis.models import Classroom
 
 class ClassroomService:
@@ -26,14 +28,14 @@ class ClassroomService:
         school = data.get('school')
         year = data.get('year')
         number = data.get('number')
+        try:
+            return Classroom.objects.create(**data)
+        except IntegrityError:
+            raise serializers.ValidationError({
+                "detail": "Classroom with this year and number already exists in this school."
+        })
 
-        classroom = Classroom.objects.create(
-            school=school if isinstance(school, Classroom._meta.get_field('school').remote_field.model) else None,
-            school_id=school.id if hasattr(school, 'id') else school,
-            year=year,
-            number=number
-        )
-        return classroom
+
 
     @staticmethod
     def update_classroom(classroom_instance, data, partial=False):

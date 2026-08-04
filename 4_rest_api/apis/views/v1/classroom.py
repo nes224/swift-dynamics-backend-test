@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import action
 from apis.models import Classroom
 from apis.serializers import ClassroomSerializer
-from apis.services.classroo_service import ClassroomService
+from apis.services.classroom_service import ClassroomService
 
 
 class ClassroomHandler(viewsets.ModelViewSet):
@@ -45,6 +45,22 @@ class ClassroomHandler(viewsets.ModelViewSet):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         classroom = serializer.save()
+        if not serializer.is_valid():
+            return Response({
+                "status": status.HTTP_400_BAD_REQUEST,
+                "msg": "Classroom with this year and number already exists in this school." 
+                       if "non_field_errors" in serializer.errors else "Invalid data",
+                "errors": serializer.errors
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            classroom = ClassroomService.create_classroom(serializer.validated_data)
+        except Exception as e:
+            return Response({
+                "status": status.HTTP_400_BAD_REQUEST,
+                "msg": "Classroom with this year and number already exists in this school."
+            }, status=status.HTTP_400_BAD_REQUEST)
+
         return Response({
             "status": status.HTTP_201_CREATED,
             "msg": "success",

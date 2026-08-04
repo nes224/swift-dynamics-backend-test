@@ -1,0 +1,1565 @@
+{
+  "info": {
+    "_postman_id": "bcf0a6d2-fd25-4266-98ed-da24dac74f8b",
+    "name": "Swift_dynamic_test_api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "23655076"
+  },
+  "item": [
+    {
+      "name": "School",
+      "item": [
+        {
+          "name": "POST /api/v1/schools",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"โรงเรียนเตรียมอุดมศึกษาพัฒนาการ\",\n    \"short_name\": \"ต.อ.\",\n    \"address\": \"449 ถ.พัฒนาการ กรุงเทพฯ\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/schools/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "schools",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "POST /api/v1/schools",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"โรงเรียนเตรียมอุดมศึกษาพัฒนาการ\",\n    \"short_name\": \"ต.อ.\",\n    \"address\": \"449 ถ.พัฒนาการ กรุงเทพฯ\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/schools/",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "schools",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Tue, 04 Aug 2026 08:23:51 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.11.5"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "312"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Cookie"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 201,\n    \"msg\": \"created successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"โรงเรียนเตรียมอุดมศึกษาพัฒนาการ\",\n        \"short_name\": \"ต.อ.\",\n        \"address\": \"449 ถ.พัฒนาการ กรุงเทพฯ\",\n        \"classroom_count\": 0,\n        \"teacher_count\": 0,\n        \"student_count\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET /api/v1/schools/:id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/schools/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "schools",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "GET /api/v1/schools/:id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/schools/1/",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "schools",
+                    "1",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Tue, 04 Aug 2026 08:24:04 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.11.5"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "299"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Cookie"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"msg\": \"success\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"โรงเรียนเตรียมอุดมศึกษาพัฒนาการ\",\n        \"short_name\": \"ต.อ.\",\n        \"address\": \"449 ถ.พัฒนาการ กรุงเทพฯ\",\n        \"classroom_count\": 0,\n        \"teacher_count\": 0,\n        \"student_count\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "PATCH /api/v1/schools/:id",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"โรงเรียนเตรียมอุดมศึกษา พญาไท\",\n    \"short_name\": \"ต.อ.\",\n    \"address\": \"กรุงเทพมหานคร\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/schools/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "schools",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "PATCH /api/v1/schools/:id",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"โรงเรียนเตรียมอุดมศึกษา พญาไท\",\n    \"short_name\": \"ต.อ.\",\n    \"address\": \"กรุงเทพมหานคร\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/schools/1/",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "schools",
+                    "1",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Tue, 04 Aug 2026 08:24:25 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.11.5"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "286"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Cookie"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"msg\": \"updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"โรงเรียนเตรียมอุดมศึกษา พญาไท\",\n        \"short_name\": \"ต.อ.\",\n        \"address\": \"กรุงเทพมหานคร\",\n        \"classroom_count\": 0,\n        \"teacher_count\": 0,\n        \"student_count\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "DELETE /api/v1/schools/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/schools/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "schools",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "DELETE /api/v1/schools/:id",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/schools/1/",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "schools",
+                    "1",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Tue, 04 Aug 2026 07:42:59 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.11.5"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "55"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Cookie"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"msg\": \"deleted successfully\",\n    \"data\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "POST /api/v1/schools/search",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"keyword\": \"\",\n    \"filter\": {\n        // \"address\": \"\"\n    },\n    \"ordering\": \"-id\",\n    \"limit\": 100,\n    \"offset\": 0\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/schools/search/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "schools",
+                "search",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "POST /api/v1/schools/search",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"keyword\": \"\",\n    \"filter\": {\n        // \"address\": \"\"\n    },\n    \"ordering\": \"-id\",\n    \"limit\": 100,\n    \"offset\": 0\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/schools/search/",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "schools",
+                    "search",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Tue, 04 Aug 2026 08:26:48 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.11.5"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "348"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Cookie"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"msg\": \"success\",\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 1,\n                \"name\": \"โรงเรียนเตรียมอุดมศึกษา พญาไท\",\n                \"short_name\": \"ต.อ.\",\n                \"address\": \"กรุงเทพมหานคร\",\n                \"classroom_count\": 0,\n                \"teacher_count\": 0,\n                \"student_count\": 0\n            }\n        ],\n        \"item_count\": 1,\n        \"pagination\": {\n            \"total\": 1,\n            \"limit\": 100,\n            \"offset\": 0\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET /api/schools",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"keyword\": \"\",\n    \"filter\": {\n        // \"address\": \"\"\n    },\n    \"ordering\": \"-id\",\n    \"limit\": 100,\n    \"offset\": 0\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/schools/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "schools",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "GET /api/schools",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"keyword\": \"\",\n    \"filter\": {\n        // \"address\": \"\"\n    },\n    \"ordering\": \"-id\",\n    \"limit\": 100,\n    \"offset\": 0\n}"
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/schools/",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "schools",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Tue, 04 Aug 2026 08:30:23 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.11.5"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "347"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Cookie"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"msg\": \"success\",\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 1,\n                \"name\": \"โรงเรียนเตรียมอุดมศึกษา พญาไท\",\n                \"short_name\": \"ต.อ.\",\n                \"address\": \"กรุงเทพมหานคร\",\n                \"classroom_count\": 0,\n                \"teacher_count\": 0,\n                \"student_count\": 0\n            }\n        ],\n        \"item_count\": 1,\n        \"pagination\": {\n            \"total\": 1,\n            \"limit\": 10,\n            \"offset\": 0\n        }\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Classroom",
+      "item": [
+        {
+          "name": "POST /api/v1/classrooms",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"school\": 1,\n    \"year\": \"1\",\n    \"number\": \"1\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/classrooms/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "classrooms",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "POST /api/v1/classrooms",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"school\": 1,\n    \"year\": \"1\",\n    \"number\": \"1\"\n}"
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/classrooms/",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "classrooms",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Tue, 04 Aug 2026 09:58:44 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.11.5"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "243"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Cookie"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 201,\n    \"msg\": \"success\",\n    \"data\": {\n        \"id\": 1,\n        \"school\": 1,\n        \"school_name\": \"โรงเรียนเตรียมอุดมศึกษา พญาไท\",\n        \"year\": 1,\n        \"number\": 1,\n        \"teachers\": [],\n        \"students\": [],\n        \"teacher_count\": 0,\n        \"student_count\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET /api/v1/classrooms/?school=id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/classrooms/?school=1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "classrooms",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "school",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "GET /api/v1/classrooms/?school=id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/classrooms/?school=1",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "classrooms",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "school",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Tue, 04 Aug 2026 13:50:55 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.11.5"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "730"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Cookie"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"msg\": \"success\",\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 13,\n                \"school\": 1,\n                \"school_name\": \"โรงเรียนเตรียมอุดมศึกษา พญาไท\",\n                \"year\": 1,\n                \"number\": 2,\n                \"teachers\": [],\n                \"students\": [],\n                \"teacher_count\": 0,\n                \"student_count\": 0\n            },\n            {\n                \"id\": 1,\n                \"school\": 1,\n                \"school_name\": \"โรงเรียนเตรียมอุดมศึกษา พญาไท\",\n                \"year\": 1,\n                \"number\": 1,\n                \"teachers\": [\n                    {\n                        \"id\": 1,\n                        \"first_name\": \"สมศักดิ์\",\n                        \"last_name\": \"รักการสอน\",\n                        \"gender\": \"M\"\n                    }\n                ],\n                \"students\": [\n                    {\n                        \"id\": 1,\n                        \"first_name\": \"สมหญิง\",\n                        \"last_name\": \"ตั้งใจเรียน\",\n                        \"gender\": \"F\"\n                    }\n                ],\n                \"teacher_count\": 1,\n                \"student_count\": 1\n            }\n        ],\n        \"item_count\": 2,\n        \"pagination\": {\n            \"total\": 2,\n            \"limit\": 10,\n            \"offset\": 0\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET /api/v1/classrooms/:id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/classrooms/13/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "classrooms",
+                "13",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "GET /api/v1/classrooms/:id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/classrooms/13/",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "classrooms",
+                    "13",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Tue, 04 Aug 2026 13:59:44 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.11.5"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "429"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Cookie"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"msg\": \"success\",\n    \"data\": {\n        \"id\": 13,\n        \"school\": 1,\n        \"school_name\": \"โรงเรียนเตรียมอุดมศึกษา พญาไท\",\n        \"year\": 1,\n        \"number\": 2,\n        \"teachers\": [\n            {\n                \"id\": 2,\n                \"first_name\": \"สมศรี\",\n                \"last_name\": \"มีสุข\",\n                \"gender\": \"F\"\n            }\n        ],\n        \"students\": [\n            {\n                \"id\": 1,\n                \"first_name\": \"สมหญิง\",\n                \"last_name\": \"ตั้งใจเรียน\",\n                \"gender\": \"F\"\n            }\n        ],\n        \"teacher_count\": 1,\n        \"student_count\": 1\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Teacher",
+      "item": [
+        {
+          "name": "POST /api/v1/teachers",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"first_name\": \"สมศักดิ์\",\n    \"last_name\": \"รักการสอน\",\n    \"gender\": \"M\",\n    \"classrooms\": [\n        1\n    ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/teachers/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "teachers",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "POST /api/v1/teachers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"first_name\": \"สมศักดิ์\",\n    \"last_name\": \"รักการสอน\",\n    \"gender\": \"M\",\n    \"classrooms\": [\n        1\n    ]\n}"
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/teachers/",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "teachers",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Tue, 04 Aug 2026 10:00:27 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.11.5"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "340"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Cookie"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 201,\n    \"msg\": \"success\",\n    \"data\": {\n        \"id\": 1,\n        \"first_name\": \"สมศักดิ์\",\n        \"last_name\": \"รักการสอน\",\n        \"gender\": \"M\",\n        \"classrooms\": [\n            1\n        ],\n        \"classrooms_info\": [\n            {\n                \"id\": 1,\n                \"year\": 1,\n                \"number\": 1,\n                \"school\": 1,\n                \"school_name\": \"โรงเรียนเตรียมอุดมศึกษา พญาไท\"\n            }\n        ],\n        \"classroom_count\": 1\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "GET /api/v1/teachers/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/teachers/?id=2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "teachers",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "GET /api/v1/teachers/:id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/teachers/?id=2",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "teachers",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Tue, 04 Aug 2026 13:53:49 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.11.5"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "842"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Cookie"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"msg\": \"success\",\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 2,\n                \"first_name\": \"สมศรี\",\n                \"last_name\": \"มีสุข\",\n                \"gender\": \"F\",\n                \"classrooms\": [\n                    1,\n                    13\n                ],\n                \"classrooms_info\": [\n                    {\n                        \"id\": 1,\n                        \"year\": 1,\n                        \"number\": 1,\n                        \"school\": 1,\n                        \"school_name\": \"โรงเรียนเตรียมอุดมศึกษา พญาไท\"\n                    },\n                    {\n                        \"id\": 13,\n                        \"year\": 1,\n                        \"number\": 2,\n                        \"school\": 1,\n                        \"school_name\": \"โรงเรียนเตรียมอุดมศึกษา พญาไท\"\n                    }\n                ],\n                \"classroom_count\": 2\n            },\n            {\n                \"id\": 1,\n                \"first_name\": \"สมศักดิ์\",\n                \"last_name\": \"รักการสอน\",\n                \"gender\": \"M\",\n                \"classrooms\": [\n                    1\n                ],\n                \"classrooms_info\": [\n                    {\n                        \"id\": 1,\n                        \"year\": 1,\n                        \"number\": 1,\n                        \"school\": 1,\n                        \"school_name\": \"โรงเรียนเตรียมอุดมศึกษา พญาไท\"\n                    }\n                ],\n                \"classroom_count\": 1\n            }\n        ],\n        \"item_count\": 2,\n        \"pagination\": {\n            \"total\": 2,\n            \"limit\": 10,\n            \"offset\": 0\n        }\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Students",
+      "item": [
+        {
+          "name": "POST /api/v1/students",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"first_name\": \"สมหญิง\",\n    \"last_name\": \"ตั้งใจเรียน\",\n    \"gender\": \"F\",\n    \"classroom\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/students/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "students",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "POST /api/v1/students",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"first_name\": \"สมหญิง\",\n    \"last_name\": \"ตั้งใจเรียน\",\n    \"gender\": \"F\",\n    \"classroom\": 1\n}"
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/students/",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "students",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Tue, 04 Aug 2026 10:02:15 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.11.5"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "284"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Cookie"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 201,\n    \"msg\": \"success\",\n    \"data\": {\n        \"id\": 1,\n        \"first_name\": \"สมหญิง\",\n        \"last_name\": \"ตั้งใจเรียน\",\n        \"gender\": \"F\",\n        \"classroom\": 1,\n        \"school_name\": \"โรงเรียนเตรียมอุดมศึกษา พญาไท\",\n        \"classroom_info\": \"ม.1/1\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "PATCH /api/v1/students/:id",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"classroom\": 13\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/students/1/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "students",
+                "1",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "PATCH /api/v1/students/:id",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"classroom\": 13\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/students/1/",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "students",
+                    "1",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Tue, 04 Aug 2026 13:58:52 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "WSGIServer/0.2 CPython/3.11.5"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "285"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Cookie"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": 200,\n    \"msg\": \"success\",\n    \"data\": {\n        \"id\": 1,\n        \"first_name\": \"สมหญิง\",\n        \"last_name\": \"ตั้งใจเรียน\",\n        \"gender\": \"F\",\n        \"classroom\": 13,\n        \"school_name\": \"โรงเรียนเตรียมอุดมศึกษา พญาไท\",\n        \"classroom_info\": \"ม.1/2\"\n    }\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": ""
+    }
+  ]
+}
