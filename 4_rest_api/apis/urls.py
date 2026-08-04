@@ -3,11 +3,13 @@ from rest_framework.routers import DefaultRouter
 from apis.views.v1.school import SchoolHandler
 from apis.views.v1.classroom import ClassroomHandler
 from apis.views.v1.teacher import TeacherHandler
+from apis.views.v1.student import StudentHandler
 
 router = DefaultRouter()
 router.register(r'schools', SchoolHandler, basename='school')
 router.register(r'classrooms', ClassroomHandler, basename='classroom')
 router.register(r'teachers', TeacherHandler, basename='teacher')
+router.register(r'students', StudentHandler, basename='student')
 
 api_v1_urls = (router.urls, 'v1')
 
