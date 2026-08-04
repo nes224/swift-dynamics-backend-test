@@ -1,35 +1,32 @@
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
+from apis.models import Classroom
+from apis.serializers import ClassroomSerializer
+from apis.services.classroo_service import ClassroomService
 
-from apis.models import Teacher
-from apis.serializers import TeacherSerializer
-from apis.services.teacher_service import TeacherService
 
-
-class TeacherHandler(viewsets.ModelViewSet):
-    queryset = Teacher.objects.all()
-    serializer_class = TeacherSerializer
+class ClassroomHandler(viewsets.ModelViewSet):
+    queryset = Classroom.objects.all()
+    serializer_class = ClassroomSerializer
 
     def list(self, request, *args, **kwargs):
         school_id = request.query_params.get('school_id') or request.query_params.get('school')
-        classroom_id = request.query_params.get('classroom_id') or request.query_params.get('classroom')
-        name = request.query_params.get('name') or request.query_params.get('keyword')
-        gender = request.query_params.get('gender')
+        year = request.query_params.get('year')
+        number = request.query_params.get('number')
         limit = int(request.query_params.get('limit', 10))
         offset = int(request.query_params.get('offset', 0))
 
-        teachers, total_count = TeacherService.search_teachers(
+        classrooms, total_count = ClassroomService.search_classrooms(
             school_id=school_id,
-            classroom_id=classroom_id,
-            name=name,
-            gender=gender,
+            year=year,
+            number=number,
             ordering='-id',
             limit=limit,
             offset=offset
         )
 
-        serializer = self.get_serializer(teachers, many=True)
+        serializer = self.get_serializer(classrooms, many=True)
         return Response({
             "status": status.HTTP_200_OK,
             "msg": "success",
@@ -47,19 +44,19 @@ class TeacherHandler(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        teacher = TeacherService.create_teacher(serializer.validated_data)
+        classroom = serializer.save()
         return Response({
             "status": status.HTTP_201_CREATED,
             "msg": "success",
-            "data": self.get_serializer(teacher).data
+            "data": self.get_serializer(classroom).data
         }, status=status.HTTP_201_CREATED)
 
     def retrieve(self, request, pk=None, *args, **kwargs):
-        teacher = TeacherService.get_teacher_by_id(pk)
-        if not teacher:
-            return Response({"status": status.HTTP_404_NOT_FOUND, "msg": "Teacher not found"}, status=status.HTTP_404_NOT_FOUND)
+        classroom = ClassroomService.get_classroom_by_id(pk)
+        if not classroom:
+            return Response({"status": status.HTTP_404_NOT_FOUND, "msg": "Classroom not found"}, status=status.HTTP_404_NOT_FOUND)
         
-        serializer = self.get_serializer(teacher)
+        serializer = self.get_serializer(classroom)
         return Response({
             "status": status.HTTP_200_OK,
             "msg": "success",
@@ -67,55 +64,53 @@ class TeacherHandler(viewsets.ModelViewSet):
         }, status=status.HTTP_200_OK)
 
     def update(self, request, pk=None, *args, **kwargs):
-        teacher = TeacherService.get_teacher_by_id(pk)
-        if not teacher:
-            return Response({"status": status.HTTP_404_NOT_FOUND, "msg": "Teacher not found"}, status=status.HTTP_404_NOT_FOUND)
+        classroom = ClassroomService.get_classroom_by_id(pk)
+        if not classroom:
+            return Response({"status": status.HTTP_404_NOT_FOUND, "msg": "Classroom not found"}, status=status.HTTP_404_NOT_FOUND)
 
-        serializer = self.get_serializer(teacher, data=request.data, partial=kwargs.get('partial', False))
+        serializer = self.get_serializer(classroom, data=request.data, partial=kwargs.get('partial', False))
         serializer.is_valid(raise_exception=True)
-        updated_teacher = TeacherService.update_teacher(teacher, serializer.validated_data, partial=kwargs.get('partial', False))
+        updated_classroom = serializer.save()
 
         return Response({
             "status": status.HTTP_200_OK,
             "msg": "success",
-            "data": self.get_serializer(updated_teacher).data
+            "data": self.get_serializer(updated_classroom).data
         }, status=status.HTTP_200_OK)
 
     def destroy(self, request, pk=None, *args, **kwargs):
-        teacher = TeacherService.get_teacher_by_id(pk)
-        if not teacher:
-            return Response({"status": status.HTTP_404_NOT_FOUND, "msg": "Teacher not found"}, status=status.HTTP_404_NOT_FOUND)
+        classroom = ClassroomService.get_classroom_by_id(pk)
+        if not classroom:
+            return Response({"status": status.HTTP_404_NOT_FOUND, "msg": "Classroom not found"}, status=status.HTTP_404_NOT_FOUND)
 
-        TeacherService.delete_teacher(teacher)
+        classroom.delete()
         return Response({
             "status": status.HTTP_200_OK,
             "msg": "deleted successfully"
         }, status=status.HTTP_200_OK)
 
     @action(detail=False, methods=['post'], url_path='search')
-    def search_teachers(self, request):
+    def search_classrooms(self, request):
         data = request.data or {}
         school_id = data.get('school_id') or data.get('school')
-        classroom_id = data.get('classroom_id') or data.get('classroom')
-        name = data.get('name') or data.get('keyword')
-        gender = data.get('gender')
+        year = data.get('year')
+        number = data.get('number')
         filters = data.get('filter') or data.get('where')
         ordering = data.get('ordering', '-id')
         limit = data.get('limit', 10)
         offset = data.get('offset', 0)
 
-        teachers, total_count = TeacherService.search_teachers(
+        classrooms, total_count = ClassroomService.search_classrooms(
             school_id=school_id,
-            classroom_id=classroom_id,
-            name=name,
-            gender=gender,
+            year=year,
+            number=number,
             filters=filters,
             ordering=ordering,
             limit=limit,
             offset=offset
         )
 
-        serializer = self.get_serializer(teachers, many=True)
+        serializer = self.get_serializer(classrooms, many=True)
         items_data = serializer.data
 
         return Response({

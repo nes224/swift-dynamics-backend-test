@@ -7,18 +7,18 @@ from .serializers import (
     StudentSerializer
 )
 
-class SchoolViewSet(viewsets.ModelViewSet):
+class SchoolHandler(viewsets.ModelViewSet):
     queryset = School.objects.all()
     serializer_class = SchoolSerializer
 
-class ClassroomViewSet(viewsets.ModelViewSet):
+class ClassroomHandler(viewsets.ModelViewSet):
     queryset = Classroom.objects.all()
     serializer_class = ClassroomSerializer
 
-class TeacherViewSet(viewsets.ModelViewSet):
+class TeacherHandler(viewsets.ModelViewSet):
     queryset = Teacher.objects.all()
     serializer_class = TeacherSerializer
 
-class StudentViewSet(viewsets.ModelViewSet):
+class StudentHandler(viewsets.ModelViewSet):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer

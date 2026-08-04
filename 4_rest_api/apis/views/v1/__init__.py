@@ -1,3 +1,4 @@
 from .school import SchoolHandler
-from .teacher import TeacherViewSet
-from .student import StudentViewSet
+from .classroom import ClassroomHandler
+from .teacher import TeacherHandler
+from .student import StudentHandler
